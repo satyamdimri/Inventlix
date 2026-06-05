@@ -47,7 +47,7 @@ function SuccessState() {
 
 /* ── Main form ───────────────────────────────────────────────── */
 export default function ConsultationForm() {
-  const [form, setForm]       = useState({ name: '', designation: '', email: '', company: '', message: '' })
+  const [form, setForm]       = useState({ name: '', designation: '', company: '', companySize: '', email: '', message: '' })
   const [errors, setErrors]   = useState({})
   const [status, setStatus]   = useState('idle') // idle | submitting | success | error
 
@@ -55,6 +55,8 @@ export default function ConsultationForm() {
     const e = {}
     if (!form.name.trim())        e.name        = 'Full name is required.'
     if (!form.designation.trim()) e.designation = 'Designation is required.'
+    if (!form.company.trim())     e.company     = 'Company name is required.'
+    if (!form.companySize)        e.companySize = 'Please select a company size.'
     if (!form.email.trim()) {
       e.email = 'Email address is required.'
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email.trim())) {
@@ -83,8 +85,9 @@ export default function ConsultationForm() {
         body: JSON.stringify({
           'Full Name':    form.name.trim(),
           'Designation':  form.designation.trim(),
+          'Company':      form.company.trim(),
+          'Company Size': form.companySize,
           'Email':        form.email.trim(),
-          'Company':      form.company.trim() || '—',
           'Message':      form.message.trim() || '—',
           _subject:       `Consultation Request — ${form.name.trim()}`,
           _captcha:       'false',
@@ -194,6 +197,47 @@ export default function ConsultationForm() {
 
                 </div>
 
+                <div className="grid sm:grid-cols-2 gap-6 mb-6">
+
+                  {/* Company Name — required */}
+                  <Field id="company" label="Company Name" required error={errors.company}>
+                    <input
+                      id="company"
+                      name="company"
+                      type="text"
+                      autoComplete="organization"
+                      placeholder="Acme Corp"
+                      value={form.company}
+                      onChange={handleChange}
+                      className={`${inputClass} ${errors.company ? 'border-[#c0392b]' : ''}`}
+                    />
+                  </Field>
+
+                  {/* Company Size — required dropdown */}
+                  <Field id="companySize" label="Company Size" required error={errors.companySize}>
+                    <select
+                      id="companySize"
+                      name="companySize"
+                      value={form.companySize}
+                      onChange={handleChange}
+                      className={`${inputClass} ${errors.companySize ? 'border-[#c0392b]' : ''} appearance-none bg-no-repeat pr-10`}
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%235A6478' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E")`,
+                        backgroundPosition: 'right 14px center',
+                      }}
+                    >
+                      <option value="" disabled>Select company size</option>
+                      <option value="1-10 Employees">1–10 Employees</option>
+                      <option value="11-50 Employees">11–50 Employees</option>
+                      <option value="51-200 Employees">51–200 Employees</option>
+                      <option value="201-500 Employees">201–500 Employees</option>
+                      <option value="501-1000 Employees">501–1,000 Employees</option>
+                      <option value="1000+ Employees">1,000+ Employees</option>
+                    </select>
+                  </Field>
+
+                </div>
+
                 {/* Email */}
                 <div className="mb-6">
                   <Field id="email" label="Email Address" required error={errors.email}>
@@ -210,23 +254,7 @@ export default function ConsultationForm() {
                   </Field>
                 </div>
 
-                {/* Company Name (optional) */}
-                <div className="mb-6">
-                  <Field id="company" label="Company Name" required={false} error={errors.company}>
-                    <input
-                      id="company"
-                      name="company"
-                      type="text"
-                      autoComplete="organization"
-                      placeholder="Optional"
-                      value={form.company}
-                      onChange={handleChange}
-                      className={inputClass}
-                    />
-                  </Field>
-                </div>
-
-                {/* Message (optional) */}
+                {/* Message — optional */}
                 <div className="mb-8">
                   <Field id="message" label="Message" required={false} error={errors.message}>
                     <textarea
