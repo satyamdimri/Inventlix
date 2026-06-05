@@ -114,18 +114,10 @@ export default function Hero() {
           <a
             href="#consultation"
             id="hero-primary-cta"
-            className="relative inline-block overflow-hidden group"
+            className="inline-block px-10 py-4 text-[0.8rem] font-bold tracking-[0.12em] uppercase text-white bg-[#0057FF] border-2 border-[#0057FF] hover:bg-white hover:text-[#0057FF] focus:bg-white focus:text-[#0057FF] focus:outline-none focus:ring-2 focus:ring-[#0057FF] focus:ring-offset-2 active:bg-[#EEF4FF] transition-all duration-300"
+            style={{ fontFamily: 'Courier Prime, monospace' }}
           >
-            <span
-              className="absolute inset-0 bg-[#0A0A0F] translate-x-[-101%] group-hover:translate-x-0 transition-transform duration-300 ease-[cubic-bezier(0.4,0,0.2,1)]"
-              aria-hidden="true"
-            />
-            <span
-              className="relative block px-10 py-4 text-[#F4F1EB] bg-[#0057FF] text-[0.8rem] font-bold tracking-[0.12em] uppercase border-2 border-[#0057FF]"
-              style={{ fontFamily: 'Courier Prime, monospace' }}
-            >
-              Book a Consultation
-            </span>
+            Book a Consultation
           </a>
           <a
             href="#services"

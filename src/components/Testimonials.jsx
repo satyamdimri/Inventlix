@@ -7,7 +7,6 @@ const testimonials = [
       'Inventlix migrated our entire data infrastructure to AWS in under 3 months. Cloud costs dropped by 54% in the first quarter post-migration — far beyond what we expected.',
     author: 'Sarah Mitchell',
     title: 'VP of Infrastructure',
-    company: 'Meridian Financial Group',
     initials: 'SM',
   },
   {
@@ -16,7 +15,6 @@ const testimonials = [
       'The AI agent built for our customer support team handles over 60% of tier-1 queries autonomously. Our team now focuses on complex issues that actually need human judgment.',
     author: 'Rajiv Anand',
     title: 'Chief Operations Officer',
-    company: 'Nexus Logistics Ltd.',
     initials: 'RA',
   },
   {
@@ -25,7 +23,6 @@ const testimonials = [
       'Their corporate AI training program transformed how our 200-person team thinks about automation. Within 6 weeks, AI tool adoption jumped from 12% to 78% across departments.',
     author: 'Claire Hoffman',
     title: 'Head of Digital Transformation',
-    company: 'Solaris Manufacturing',
     initials: 'CH',
   },
 ]
@@ -100,7 +97,7 @@ export default function Testimonials() {
                     className="text-[0.7rem] tracking-[0.07em] text-[#5A6478] mt-1"
                     style={{ fontFamily: 'Courier Prime, monospace' }}
                   >
-                    {t.title} · {t.company}
+                    {t.title}
                   </div>
                 </div>
               </figcaption>

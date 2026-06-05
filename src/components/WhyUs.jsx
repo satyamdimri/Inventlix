@@ -5,7 +5,7 @@ const stats = [
   { target: 60,   suffix: '%+', label: 'Average Cloud Cost Savings', description: 'Across cloud migration and FinOps engagements with enterprise clients.' },
   { target: 24,   suffix: '/7', label: 'DevOps Support',             description: 'Always-on monitoring and incident response — no downtime surprises.'   },
   { target: 100,  suffix: '+',  label: 'Successful Deployments',     description: 'Cloud, AI, and hardware projects delivered across multiple industries.'  },
-  { target: null, suffix: '',   label: 'Security Standards',         description: 'SOC2-aligned practices, zero-trust architecture, and compliance support.' },
+  { target: null, suffix: '',   label: 'Security Standards',         description: 'Enterprise-grade security and operational best practices.' },
 ]
 
 function StatCard({ target, suffix, label, description, inView }) {

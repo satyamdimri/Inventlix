@@ -56,7 +56,7 @@ export default function Navbar() {
           <a
             href="#consultation"
             id="nav-cta"
-            className="font-mono-inv text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#F4F1EB] bg-[#0057FF] hover:bg-[#0A0A0F] px-5 py-2.5 transition-colors duration-200 inline-block"
+            className="font-mono-inv text-[0.75rem] font-bold tracking-[0.1em] uppercase text-white bg-[#0057FF] border-2 border-[#0057FF] hover:bg-white hover:text-[#0057FF] focus:bg-white focus:text-[#0057FF] focus:outline-none px-5 py-2.5 transition-all duration-300 inline-block"
           >
             Book a Call
           </a>
@@ -87,7 +87,7 @@ export default function Navbar() {
           ))}
           <a
             href="#consultation"
-            className="font-mono-inv text-[0.75rem] font-bold tracking-[0.1em] uppercase text-[#F4F1EB] bg-[#0057FF] px-5 py-3 text-center mt-1"
+            className="font-mono-inv text-[0.75rem] font-bold tracking-[0.1em] uppercase text-white bg-[#0057FF] border-2 border-[#0057FF] hover:bg-white hover:text-[#0057FF] px-5 py-3 text-center mt-1 transition-all duration-300"
             onClick={() => setMenuOpen(false)}
           >
             Book a Call
