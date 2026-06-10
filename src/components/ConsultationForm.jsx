@@ -108,22 +108,22 @@ export default function ConsultationForm() {
   return (
     <section
       id="consultation"
-      className="bg-[#F4F1EB] py-24 lg:py-32 border-t border-[#D0CDC6]"
+      className="bg-[#F4F1EB] py-16 sm:py-24 lg:py-32 border-t border-[#D0CDC6]"
       aria-labelledby="form-headline"
     >
-      <div className="max-w-7xl mx-auto px-6 lg:px-16">
-        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-16 lg:gap-24 items-start">
+      <div className="max-w-7xl mx-auto px-5 sm:px-8 lg:px-16">
+        <div className="grid lg:grid-cols-[1fr_1.1fr] gap-10 sm:gap-16 lg:gap-24 items-start">
 
           {/* ── Left — context ── */}
           <div className="lg:sticky lg:top-28">
             <p className="section-label mb-3">Contact Us</p>
             <h2
               id="form-headline"
-              className="font-display text-[clamp(2.4rem,4vw,3.6rem)] text-[#0A0A0F] leading-none mb-5"
+              className="font-display text-[clamp(2rem,5vw,3.6rem)] text-[#0A0A0F] leading-none mb-4 sm:mb-5"
             >
               Book a Consultation
             </h2>
-            <p className="text-[0.95rem] leading-[1.75] text-[#5A6478] font-light max-w-[38ch] mb-10">
+            <p className="text-[0.9rem] sm:text-[0.95rem] leading-[1.75] text-[#5A6478] font-light max-w-[38ch] mb-7 sm:mb-10">
               Tell us about your requirements and our team will get in touch with you.
             </p>
 
@@ -160,7 +160,7 @@ export default function ConsultationForm() {
           </div>
 
           {/* ── Right — form ── */}
-          <div className="bg-white border border-[#D0CDC6] p-8 lg:p-10">
+          <div className="bg-white border border-[#D0CDC6] p-6 sm:p-8 lg:p-10">
             {status === 'success' ? (
               <SuccessState />
             ) : (

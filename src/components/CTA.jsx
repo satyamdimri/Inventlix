@@ -1,10 +1,10 @@
 import { Mail } from 'lucide-react'
 
-/* ── Zoho-style enterprise blueprint illustration ── */
+/* ── Server blueprint illustration ── */
 function EnterpriseBlueprint() {
   return (
     <div
-      className="absolute bottom-0 right-0 w-[320px] h-[360px] pointer-events-none select-none"
+      className="absolute bottom-0 right-0 w-[200px] h-[240px] sm:w-[320px] sm:h-[360px] pointer-events-none select-none"
       aria-hidden="true"
       style={{ opacity: 0.08 }}
     >
@@ -37,13 +37,11 @@ export default function CTA() {
   return (
     <section
       id="cta-banner"
-      className="relative py-28 lg:py-36 overflow-hidden"
-      style={{
-        background: 'linear-gradient(145deg, #1268B8 0%, #1062B3 45%, #0D56A3 100%)',
-      }}
+      className="relative py-20 sm:py-28 lg:py-36 overflow-hidden"
+      style={{ background: 'linear-gradient(145deg, #1268B8 0%, #1062B3 45%, #0D56A3 100%)' }}
       aria-labelledby="cta-headline"
     >
-      {/* Depth layers */}
+      {/* Depth */}
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
@@ -66,10 +64,10 @@ export default function CTA() {
         aria-hidden="true"
       />
 
-      {/* Giant background word */}
+      {/* Background word */}
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 font-display whitespace-nowrap pointer-events-none select-none leading-none"
-        style={{ fontSize: 'clamp(14rem, 28vw, 26rem)', color: 'rgba(255,255,255,0.028)', letterSpacing: '0.01em' }}
+        style={{ fontSize: 'clamp(8rem, 28vw, 26rem)', color: 'rgba(255,255,255,0.028)', letterSpacing: '0.01em' }}
         aria-hidden="true"
       >
         READY
@@ -78,9 +76,9 @@ export default function CTA() {
       <EnterpriseBlueprint />
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-5 sm:px-8 lg:px-16 text-center">
         <p
-          className="text-[0.68rem] font-bold tracking-[0.25em] uppercase mb-5"
+          className="text-[0.65rem] sm:text-[0.68rem] font-bold tracking-[0.2em] sm:tracking-[0.25em] uppercase mb-4 sm:mb-5"
           style={{ fontFamily: 'Courier Prime, monospace', color: 'rgba(212,233,255,0.55)' }}
         >
           Get Started
@@ -88,42 +86,37 @@ export default function CTA() {
 
         <h2
           id="cta-headline"
-          className="font-display leading-[0.9] mb-6 max-w-[14ch] mx-auto"
-          style={{ fontSize: 'clamp(3rem, 7vw, 5.8rem)', color: '#F4F1EB' }}
+          className="font-display leading-[0.9] mb-5 sm:mb-6 max-w-[14ch] mx-auto"
+          style={{ fontSize: 'clamp(2.4rem, 7vw, 5.8rem)', color: '#F4F1EB' }}
         >
           Ready to Modernize Your Business?
         </h2>
 
         <p
-          className="text-[1rem] leading-[1.75] max-w-[46ch] mx-auto mb-12 font-light"
+          className="text-[0.9rem] sm:text-[1rem] leading-[1.75] max-w-[40ch] mx-auto mb-8 sm:mb-12 font-light px-2 sm:px-0"
           style={{ color: 'rgba(212,233,255,0.7)', fontFamily: 'DM Sans, sans-serif' }}
         >
-          Partner with experts in cloud infrastructure, AI solutions, enterprise
-          hardware, and workforce transformation.
+          Partner with experts in cloud infrastructure, AI solutions, enterprise hardware, and workforce transformation.
         </p>
 
-        {/* Single CTA */}
-        <div className="flex justify-center mb-12">
+        {/* CTA */}
+        <div className="flex justify-center mb-8 sm:mb-12">
           <a
             href="#consultation"
             id="cta-primary"
-            className="inline-flex items-center gap-2 px-10 py-4 text-[0.8rem] font-bold tracking-[0.12em] uppercase bg-[#F4F1EB] text-[#1062B3] border-2 border-[#F4F1EB] hover:bg-white hover:text-[#0057FF] hover:border-white focus:bg-white focus:text-[#0057FF] focus:outline-none active:bg-[#E8EFF9] transition-all duration-300"
+            className="inline-flex items-center gap-2 px-8 sm:px-10 py-4 text-[0.8rem] font-bold tracking-[0.12em] uppercase bg-[#F4F1EB] text-[#1062B3] border-2 border-[#F4F1EB] hover:bg-white hover:text-[#0057FF] hover:border-white focus:bg-white focus:text-[#0057FF] focus:outline-none active:bg-[#E8EFF9] transition-all duration-300"
             style={{ fontFamily: 'Courier Prime, monospace' }}
           >
             Book a Consultation
-            <svg
-              className="translate-x-0 group-hover:translate-x-1 transition-transform duration-200"
-              width="14" height="14" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-            >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
               <path d="M5 12h14M12 5l7 7-7 7"/>
             </svg>
           </a>
         </div>
 
-        {/* Contact info */}
+        {/* Contact */}
         <div
-          className="flex items-center justify-center gap-2 text-[0.8rem]"
+          className="flex items-center justify-center gap-2 text-[0.78rem] sm:text-[0.8rem]"
           style={{ color: 'rgba(212,233,255,0.5)', fontFamily: 'DM Sans, sans-serif' }}
         >
           <Mail size={13} />

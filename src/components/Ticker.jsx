@@ -1,4 +1,3 @@
-// Scrolling ticker — matches the reference design exactly
 const TICKER_ITEMS = [
   'Cloud Migration',
   'AWS · Azure · GCP',
@@ -11,12 +10,11 @@ const TICKER_ITEMS = [
 ]
 
 export default function Ticker() {
-  // Duplicate for seamless infinite scroll
   const items = [...TICKER_ITEMS, ...TICKER_ITEMS]
 
   return (
     <div
-      className="bg-[#0057FF] py-[0.65rem] overflow-hidden whitespace-nowrap"
+      className="bg-[#0057FF] py-2.5 overflow-hidden whitespace-nowrap"
       aria-hidden="true"
     >
       <div
@@ -26,11 +24,11 @@ export default function Ticker() {
         {items.map((item, i) => (
           <span
             key={i}
-            className="px-10 text-[0.72rem] font-bold tracking-[0.14em] uppercase text-[#F4F1EB]"
+            className="px-6 sm:px-10 text-[0.68rem] sm:text-[0.72rem] font-bold tracking-[0.12em] sm:tracking-[0.14em] uppercase text-[#F4F1EB]"
             style={{ fontFamily: 'Courier Prime, monospace' }}
           >
             {item}
-            <span className="ml-10 opacity-40">·</span>
+            <span className="ml-6 sm:ml-10 opacity-40">·</span>
           </span>
         ))}
       </div>
